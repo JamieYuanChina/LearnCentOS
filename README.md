@@ -19,3 +19,16 @@ $提示符为普通用户<br>
 默认情况下 linux有一个图形界面 alt +f1和五个文本登录界面alt + f[2-6]<br>
 
 shift pgup  在文本界面回看上一屏幕<br>
+id 命令 查看当前用户信息<br>
+ctrl d退出当前用户<br>
+sudo  临时使用root用户操作<br>
+visudo 配置sudo<br>
+
+linux bash默认shell<br>
+history  历史命令查看<br>
+!28    执行历史中28号指令<br>
+
+/proc   内存中系统文件<br>
+/sys   内存中<br>
+/var   一般存放数据<br>
+

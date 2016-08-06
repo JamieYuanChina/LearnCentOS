@@ -32,3 +32,26 @@ history  历史命令查看<br>
 /sys   内存中<br>
 /var   一般存放数据<br>
 
+l.   只显示隐藏文件<br>
+ls -d */   //显示所有目录<br>
+ls -ld 目录     查看目录本身，不进入里面查看<br>
+
+du -sh   统计目录大小<br>
+
+df -Th    显示文件系统，-T 显示类型。<br>
+
+file a   文件类型。<br>
+tab 键自动补齐命令或文件名。<br>
+
+ctrl c  清除命令行。<br>
+
+vim中<br>
+ctrl-w ,s 分窗口<br>
+set nu 增加行号  <br>
+set nonu  取消行号<br>
+set ai  自动缩进<br>
+可以编辑~目录下的.vimrc<br>
+   set number<br>
+%s/X86_64/i386/g      全文搜索且替换。go<br>
+   
+   

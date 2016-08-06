@@ -71,4 +71,38 @@ set ai  自动缩进<br>
    set number<br>
 %s/X86_64/i386/g      全文搜索且替换。go<br>
    
-   
+文件权限<br>
+file：<br>
+r    read<br>
+w    write<br>
+x    exe<br>
+dir：<br>
+r    ls<br>
+w    rm rmdir touch<br>
+x   ls -l<br>
+chown  改变文件的拥有者<br>
+chgrp  改变文件所属组<br>
+chmod g+w   u,g,o=a   +,-  r,w,x<br>
+chmod 640         <br>
+安全相关文件<br>
+/etc/passwd    用户信息<br>
+/etc/shadow    密码信息<br>
+/etc/group     组信息<br>
+新建用户会把 /etc/skel/目录中的文件拷贝到新建用户主目录中。<br>
+用户环境初始化文件<br>
+~/.bash_profile   登录前要做什么<br>
+~/.bashrc         同上<br>
+~/.bash_logout    登出后要做什么<br>
+可以再登录前自定义命令<br>
+cat ~/.bashrc<br>
+alias l=‘ls -al’<br>
+useradd   增加用户<br>  
+userdel   删除用户<br>
+usermod   修改用户<br>
+
+. 或者 source scriptname  立即执行脚本<br>
+密码规则<br>
+/etc/login.defs   新用户默认的权限定义在这里<br>
+
+
+

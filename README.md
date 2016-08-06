@@ -2,7 +2,7 @@
 这个项目是我学习CentOS的一个记录
 
 CentOS
-yum install gcc
+yum install gcc <br>
 yum info gcc
 yum remove gcc
 yum list gcc*

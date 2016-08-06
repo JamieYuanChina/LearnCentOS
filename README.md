@@ -104,5 +104,15 @@ usermod   修改用户<br>
 密码规则<br>
 /etc/login.defs   新用户默认的权限定义在这里<br>
 
+特殊目录权限<br>
+
+chmod  u+t  例如/tmp目录  是说每个人都可以再这里读写操作，单是只限制自己的文件。<br>
+chmod g+s ti  协同工作目录。同组都能访问。<br>
+
+可以使用acl微调用户权限<br>
+例如setfacl -m u:frodo:rw- /file  修改 用户 frodo的权限为 rw- 针对/file文件。<br>
+
+-rw-rw----+    /file  最后是个+号，代表有扩展属性。<br>
+使用 getfacl /file   查看权限<br>
 
 

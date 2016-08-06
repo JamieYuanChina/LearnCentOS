@@ -9,3 +9,7 @@ yum list gcc* <br>
 <br>
 /etc/yum.conf 配置文件<br>
 尽量使用yum维护软件包，不要使用rpm，因为rpm命令完整性检查需要自己做。<br>
+
+yum grouplist //查看所有语言包列表<br>
+
+yum groupinstall ‘Chinese Support’ //安装中文字体<br>

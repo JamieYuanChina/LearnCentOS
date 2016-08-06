@@ -46,6 +46,23 @@ tab 键自动补齐命令或文件名。<br>
 ctrl c  清除命令行。<br>
 
 vim中<br>
+:e  重新读取文件。不保存修改。<br>
+vi 可以同时打开多个文件，<br>
+使用:n显示下一个，:N显示上一个文件<br>
+:wq  :w  :x  :q  :q!<br>
+G  最后一行<br>
+gg 第一行<br>
+:1000   到1000行<br>
+/new   搜索new <br>
+n到下一个 N 回去一个<br>
+:nohl    取消高亮<br>
+3yy  复制行<br>
+p  粘贴<br>
+dd  剪切<br>
+ctrl v  块选择模式,支持列模式<br>
+u  恢复操作到上一次。后悔<br>
+ctrl r 反后悔<br>
+
 ctrl-w ,s 分窗口<br>
 set nu 增加行号  <br>
 set nonu  取消行号<br>

@@ -1,6 +1,104 @@
 # LearnCentOS
 这个项目是我学习CentOS的一个记录
 
+CentOS 6.8<br>
+安装minimal版本。<br>
+1、完成后配置网络。<br>
+vi  /etc/sysconfig/network-scripts/ifcfg-eht0<br>
+内容如下：<br>
+DEVICE=eth0<br>
+TYPE=Etherne<br>
+tUUID=58d64342-6bca-4156-8d4b-3bb092190644<br>
+ONBOOT=yes         //开机启动网络<br>
+NM_CONTROLLED=yes<br>
+BOOTPROTO=none<br>
+HWADDR=00:15:5D:01:44:11<br>
+IPADDR=192.168.1.103<br>
+PREFIX=24<br>
+GATEWAY=192.168.1.251<br>
+DNS1=202.96.128.86<br>
+DNS2=8.8.8.8<br>
+DEFROUTE=yes<br>
+IPV4_FAILURE_FATAL=yes<br>
+IPV6INIT=no<br>
+NAME="System eth0"<br>
+2、安装编译器GCC和gdb<br>
+yum list  gcc*<br>
+
+yum install gcc.i686 gcc-c++.i686<br>
+yum install gdb.i686<br>
+其他常用工具安装如下<br>
+yum -y install gcc gcc-c++ autoconf automake make<br>
+yum -y install zlib zlib-devel openssl openssl--devel pcre pcre-devel <br>
+<br>
+<br>
+3、安装git<br>
+yum list  git*<br>
+<br>
+yum install git.i686<br>
+4、编写C++代码编译测试<br>
+vi test.cpp<br>
+内容如下<br>
+#include <iostream><br>
+using namespace std;<br>
+
+int main(void)<br>
+{<br>
+	cout<<"Hello World!"<<endl;<br>
+}<br>
+保存退出后编译<br>
+g++ -o test test.cpp<br>
+执行查看结果。<br>
+./test<br>
+出现Hello World!表示编译成功。<br>
+5、安装nginx<br>
+执行以下语句，<br>
+rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm<br>
+yum install nginx<br>
+service nginx start<br>
+      <br>
+iptables -I INPUT 5 -p tcp --dport 80 -j ACCEPT<br>
+    以上命令修改了/etc/sysconfig/iptables<br>
+  <br>
+6、配置Git服务器<br>
+服务器上安装git<br>
+<br>
+<br>
+增加git用户<br>
+sudo useradd  git<br>
+
+在/home/git/.ssh/下(如果没有.ssh目录，则 mkdir .ssh)<br>
+touch authorized_keys<br>
+把客户机的公钥拷贝到这个文件中，一个公钥一行。<br>
+
+增加普通用户<br>
+useradd jamie<br>
+passwd jamie<br>
+之后使用jamie用户<br>
+初始化仓库<br>
+sudo git init --bare sample.git<br>
+修改仓库权限<br>
+sudo chown -R git:git sample.git<br>
+禁用shell登录<br>
+编辑/etc/passwd<br>
+git:x:1001:1001:,,,:/home/git:/bin/bash<br>
+改为：<br>
+git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell<br>
+这样，git用户可以正常通过ssh使用git，但无法登录shell，因为我们为git用户指定的git-shell每次一登录就自动退出。<br>
+现在，可以通过git clone命令克隆远程仓库了，在各自的电脑上运行：<br>
+$ git clone git@server:/srv/sample.git<br>
+<br>
+<br>
+
+
+当我们使用sudo命令切换用户的时候可能会遇到提示以下错误：xxx is not in the sudoers file. This incident will be reported，xxx是你当前的用户名，究其原因是用户没有加入到sudo的配置文件里<br>
+切换到root用户，运行visudo命令<br>
+在打开的配置文件中，找到root ALL=(ALL) ALL，在下面添加一行<br>
+xxx ALL=(ALL) ALL 其中xxx是你要加入的用户名称<br>
+输入:wq保存并退出配置文件，再次使用sudo命令就不会有上面的提示了。<br>
+<br>
+
+
 CentOS <br>
 yum install gcc <br>
 yum info gcc <br>

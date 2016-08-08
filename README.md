@@ -39,7 +39,7 @@ yum install git.i686<br>
 4、编写C++代码编译测试<br>
 vi test.cpp<br>
 内容如下<br>
-#include <iostream><br>
+\#include <iostream><br>
 using namespace std;<br>
 
 int main(void)<br>

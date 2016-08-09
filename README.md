@@ -1,6 +1,32 @@
 # LearnCentOS
 这个项目是我学习CentOS的一个记录
 
+RedHat 
+创建安装介质<br>
+dd if=/path/to/image.iso of=/dev/device bs=blocksize<br>
+dd if=/home/testuser/Downloads/rhel-server-7.0x86_64-boot.iso of=/dev/sdb bs=512k<br>
+在 Windows 系统中生成 USB 安装介质，Red Hat建议您使用 Fedora LiveUSB Creator，您可在https://fedorahosted.org/liveusb-creator/下载该工具。<br>
+Anaconda允许您在安装过程中截图。在安装过程的任意时刻按 Shift+Print Screen 组合键，anaconda 会将截图保存到 /tmp/anaconda-screenshots 中。<br>
+Ctrl+Alt+F1  切换控制台。<br>
+安装 Red Hat Enterprise Linux 7 最少需要一个分区，但 Red Hat 建议至少有四个分区：/、/home、/boot 和 swap。<br>
+/boot 分区 – 建议大小至少有 500 MB<br>
+root(/) 分区 – 建议大小为 10GB<br>
+/home 分区 – 建议大小至少为 1GB<br>
+swap 分区 – 建议大小至少为 1GB<br>
+swap分析建议：内存2G以内建议内存的2倍。内存2-8G，建议等于内存容量，内存大于8G建议1/2内存容量。<br>
+/var 目录中包含大量应用程序，其中包括 Apache 网页服务器。同时它还临时保存下载的更新软件包。确定包含 /var 目录的分区中有足够空间可用于保存下载的更新以及其他内容。PackageKit 更新
+
+软件默认将更新的软件包下载到 /var/cache/yum/。如果您为 /var/ 生成独立分区，请确定其大小至少在 3.0 GB 以上以便保存下载的软件包更新。<br>
+/usr 目录中包含 Red Hat Enterprise Linux 系统中大部分软件内容。要安装默认软件组需要分配至少5GB空间。如果将该系统作为软件开发工作站使用，则至少需要分配 10GB。<br>
+XFS替换ext4作为 Red Hat Enterprise Linux 7 的默认文件系统<br>
+/proc "文件系统"是一个目录，其中包含的文件层次结构代表了 Linux 内核的当前状态。它允许用户和管理员查看系统的内核视图。<br>
+lscpu  查看cpu信息<br>
+vmstat 查看内存信息<br>
+iostat 查看io<br>
+ss 来替代 netstat 查看网络，ip代替ifconfig设置网络,ethtool工具允许管理员查看和编辑网络接口卡设置<br>
+nmap 端口扫描工具<br>
+
+
 CentOS 6.8<br>
 安装minimal版本。<br>
 1、完成后配置网络。<br>
